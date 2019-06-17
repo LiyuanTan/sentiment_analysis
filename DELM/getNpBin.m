@@ -1,7 +1,4 @@
 function np=getNpBin()
-%author:wujinnnnn@qq.com
-%本函数自动读取./npbin文件夹下的*.npbin文件
-%返回一个结构体np，np.XX(XX为变量名)包含了./npbin下的所有变量文件
     if not (exist('./npbin')==7)
         error('no data dir!');
     end
@@ -15,7 +12,7 @@ function np=getNpBin()
         eachFileName = deblank(eachFileName);
         fprintf('loding file %s\n', eachFileName)
         parts = regexp(eachFileName,'_','split');
-        if length(parts)~=5
+        if length(parts)~=4
             fprintf('file name error of %s\n',eachFileName);
             continue
         end
